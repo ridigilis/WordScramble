@@ -26,14 +26,13 @@ struct ContentView: View {
                             Image(systemName: "\(word.count).circle")
                             Text(word)
                         }
-                        
                     }
                 }
             }
+            .navigationTitle(rootWord)
+            .onSubmit(addNewWord)
+            .onAppear(perform: startGame)
         }
-        .navigationTitle(rootWord)
-        .onSubmit(addNewWord)
-        .onAppear(perform: startGame)
     }
     
     func addNewWord() {
